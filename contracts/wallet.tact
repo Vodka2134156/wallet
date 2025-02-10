@@ -23,7 +23,7 @@ contract Wallet with Deployable {
 
     fun processTransfer(msg: WalletOperation, externals: Bool ) {
 
-        // Check Signature
+        // Check Signatures
         let op_hash: Int = msg.operation.hash();
         require(checkSignature(op_hash, msg.signature, self.publicKey), "Invalid signature");
 
